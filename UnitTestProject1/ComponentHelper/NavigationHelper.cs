@@ -15,9 +15,5 @@ namespace UnitTestProject1.ComponentHelper
             ObjectRepository.Driver.Navigate().GoToUrl(url);
 
         }
-
-
-
-
     }
 }

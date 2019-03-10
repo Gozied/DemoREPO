@@ -13,16 +13,16 @@ namespace UnitTestProject1.SandBox.Navigation
     [TestClass]
     public class TestNavigation
     {
-        [TestMethod]
-        public void NavigatetoWebsite()
-        {
-            //INavigation page = ObjectRepository.Driver.Navigate();
-            //page.GoToUrl(ObjectRepository.Config.GetWebsite());
-            //ObjectRepository.Driver.
-            //    Navigate().GoToUrl(ObjectRepository.
-            //        Config.GetWebsite());
+        //[TestMethod]
+        //public void NavigatetoWebsite()
+        //{
+        //    //INavigation page = ObjectRepository.Driver.Navigate();
+        //    //page.GoToUrl(ObjectRepository.Config.GetWebsite());
+        //    //ObjectRepository.Driver.
+        //    //    Navigate().GoToUrl(ObjectRepository.
+        //    //        Config.GetWebsite());
 
-            NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
-        }
+        //    NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
+        //}
     }
 }

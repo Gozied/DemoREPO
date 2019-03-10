@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Security.Policy;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,6 +16,7 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
+        
         private readonly IConfig _config = new AppConfigReader();
 
         /*[TestMethod, TestCategory("smoke Test")]
@@ -27,35 +30,47 @@ namespace UnitTestProject1
             driver.Dispose();
         }*/
 
-        //[TestMethod, TestCategory("smoke Test")]
-        //public void Navigate()
-        //{
-        //    ConfigurationManager.AppSettings.Get("Browser");
-        //    Console.WriteLine(BrowserType.Chrome);
-        //    //Console.WriteLine((int) BrowserType.Explorer);
-        //}
-
-
-        //[TestMethod]
-        //public void TestWebElemenT()
-        //{
-        //    NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
-
-        //    Console.WriteLine("the page title is: {0}", PageTitleHelper.GetPageTitle());
-
-        //}
-
+        [TestMethod, TestCategory("smoke Test")]
+        public void Navigate()
+        {
+            ConfigurationManager.AppSettings.Get("Browser");
+            Console.WriteLine(BrowserType.Explorer);
+            //Console.WriteLine((int) BrowserType.Explorer);
+        }
 
         [TestMethod]
-        public void TestWebElemenT()
+        public void LunchBrowser()
         {
             NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
 
+            Console.WriteLine("the page title is: {0}", PageTitleHelper.GetPageTitle());
+            //ObjectRepository.Driver.FindElement(By.Id("q"));
 
+
+
+            //IList<IWebElement> list = ObjectRepository.Driver.FindElements(By.TagName("input"));
+            //var taglist = ObjectRepository.Driver.FindElements(By.TagName("input"));
+            //foreach (var tag in taglist)
+            //{
+            //    if (tag.GetAttribute("value").Equals("Go"))
+            //    {
+            //       tag.Click();
+            //       break; 
+            //    }
+
+            //    if (!tag.GetAttribute("value").Equals("Go")) continue;
+            //    {
+            //        tag.Click();
+            //        break;
+            //    }
+            LinkHelper.ClickLink(By.LinkText("Learn more about sponsorship"));
+            //LinkHelper.ClickLink(By.PartialLinkText(" more about sponsorship"));
+
+            TextBoxHelper.ClearText(By.Id("q"));
+            TextBoxHelper.SendText(By.Id("q"), "Abel");
+        }
 
         }
 
-
-        
     }
-}
+
