@@ -11,6 +11,6 @@ namespace UnitTestProject1.Settings
         public const string Browser = "Browser";
         public const string UserName = "Abel";
         public const string Password = "David1234";
-        public const string Website =   "Website";
+        public const string Website = "Website";
     }
 }

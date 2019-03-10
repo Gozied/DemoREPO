@@ -15,7 +15,7 @@ using UnitTestProject1.Settings;
 namespace UnitTestProject1.BaseClass
 {
     [TestClass]
-    class TestBaseClass
+    public class TestBaseClass
     {
 
         #region BrowserOptions
