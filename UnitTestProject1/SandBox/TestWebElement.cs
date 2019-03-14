@@ -25,15 +25,21 @@ namespace UnitTestProject1.SandBox
             //LinkHelper.ClickLink(By.PartialLinkText(" more about sponsorship"));
             //TextBoxHelper.ClearText(By.Id("q"));
             //TextBoxHelper.SendText(By.Id("q"), "Abel");
-            LinkHelper.ClickLink(By.XPath("/html/body/nav/div/div[2]/ul/li[2]/a/span[1]"));
-            Thread.Sleep(4000);
-            LinkHelper.ClickLink(By.LinkText("Register"));
-            Console.WriteLine(CheckBoxHelper.IsCheckBoxChecked(By.Name("agree")));
-            CheckBoxHelper.CheckCheckBox(By.Name("agree"));
+            //LinkHelper.ClickLink(By.XPath("/html/body/nav/div/div[2]/ul/li[2]/a/span[1]"));
+            //Thread.Sleep(4000);
+            //LinkHelper.ClickLink(By.LinkText("Register"));
+            //Console.WriteLine(CheckBoxHelper.IsCheckBoxChecked(By.Name("agree")));
+            //CheckBoxHelper.CheckCheckBox(By.Name("agree"));
+            ButtonHelper.IsButtonEnabled(By.XPath("/html/body/nav/div/div[2]/ul/li[2]/a/span[1]"));
+            ButtonHelper.ClickButton(By.XPath("/html/body/nav/div/div[2]/ul/li[2]/a/span[1]"));
+            ButtonHelper.ClickButton(By.LinkText("Register"));
+            WaitHelper.WaitForElement(By.CssSelector(""));
+            RadioBottonHelper.IsClickRadioButton(By.Name("newsletter"));
+            RadioBottonHelper.ClicRadiokButton(By.Name("newsletter"));
         }
+        
     }
 }
-
 
 
 
