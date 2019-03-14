@@ -107,10 +107,8 @@ namespace UnitTestProject1.BaseClass
                     break;
                 default:
                     throw new NoSuitableDriverFound("Driver not found {0}", ObjectRepository.Config.GetBrowser());
-
-
             }
-
+             ObjectRepository.Driver.Manage().Timeouts().PageLoad= TimeSpan.FromSeconds(15);
         }
 #endregion
     }
