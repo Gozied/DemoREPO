@@ -110,7 +110,21 @@ namespace UnitTestProject1.BaseClass
             }
              ObjectRepository.Driver.Manage().Timeouts().PageLoad= TimeSpan.FromSeconds(15);
         }
-#endregion
+
+        [AssemblyCleanup]
+        public static void teardown()
+        {
+            if (ObjectRepository.Driver != null)
+            {
+                ObjectRepository.Driver.Dispose();
+            }
+        }
+
+
+
+
+
+        #endregion
     }
 
 }

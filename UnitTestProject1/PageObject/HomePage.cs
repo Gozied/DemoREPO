@@ -13,7 +13,9 @@ namespace UnitTestProject1.PageObject
     {
         private readonly By _desktop = By.LinkText("Desktops");
         private readonly By _macoption = By.LinkText("Mac (1)");
-        
+        private readonly By _myAccountButton = By.XPath("//*[@id='top - links']/ul/li[2]/a/i");
+        private readonly By _register = By.LinkText("Register");
+
 
         public void SelectDesktopHeader()
         {
@@ -24,6 +26,17 @@ namespace UnitTestProject1.PageObject
             ButtonHelper.ClickButton(_macoption);
         }
 
+        public void SelectMyAccountButton()
+        {
+            ButtonHelper.ClickButton(_myAccountButton);
+        }
+
+        public void SelectRegister()
+        {
+            ButtonHelper.ClickButton(_register);
+        }
+
+
         public MacPage GotoMacPage()
         {
             NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
@@ -32,7 +45,13 @@ namespace UnitTestProject1.PageObject
             return new MacPage();
         }
 
-
+        public RegisterAccountPage RegisterAccountPage()
+        {
+            NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
+            SelectMyAccountButton();
+            SelectRegister();
+            return new RegisterAccountPage();
+        }
 
     }
 

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using UnitTestProject1.ComponentHelper;
 
 namespace UnitTestProject1.PageObject
@@ -13,7 +14,7 @@ namespace UnitTestProject1.PageObject
         private readonly By _sortByOptions = By.Id("input-sort");
         private readonly By _sortByRange = By.Id("input-limit");
         private readonly By _addToCart= By.CssSelector(".button-group > button:nth-child(1)");
-        private readonly By _shopingCartButton = By.XPath("//*[@id='cart - total']");
+        private readonly By _shopingCartButton = By.CssSelector("#cart-total");
 
 
 
@@ -40,6 +41,7 @@ namespace UnitTestProject1.PageObject
 
         public void ShowShopingCart()
         {
+            Thread.Sleep(10000);
             ButtonHelper.ClickButton(_shopingCartButton);
         }
 

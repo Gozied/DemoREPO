@@ -48,6 +48,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
@@ -63,6 +64,8 @@
     <Compile Include="ComponentHelper\DropDownHelper.cs" />
     <Compile Include="ComponentHelper\GenericHelper.cs" />
     <Compile Include="ComponentHelper\LinkHelper.cs" />
+    <Compile Include="ComponentHelper\LoggOutHelper.cs" />
+    <Compile Include="PageObject\LogoutPage.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
     <Compile Include="ComponentHelper\PageTitleHelper.cs" />
     <Compile Include="ComponentHelper\RadioBottonHelper.cs" />
@@ -72,8 +75,10 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CostomExeption\NoSuitableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="PageObject\AccountConfirmationPage.cs" />
     <Compile Include="PageObject\HomePage.cs" />
     <Compile Include="PageObject\MacPage.cs" />
+    <Compile Include="PageObject\RegisterAccountPage.cs" />
     <Compile Include="Pages.cs" />
     <Compile Include="SandBox\Como.cs" />
     <Compile Include="SandBox\Navigation\TestNavigation.cs" />
@@ -86,14 +91,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataFiles\abel.csv" />
     <None Include="Packages.config" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataFiles\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
