@@ -16,13 +16,23 @@ namespace UnitTestProject1.SandBox
         [TestMethod]
         public void MenuDropDown()
         {
-            NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
-            LinkHelper.ClickLink(By.LinkText("Desktops"));
-            LinkHelper.ClickLink(By.LinkText("Mac (1)"));
-            DropDownHelper.SelectElementbyIndex(By.Id("input-sort"),3);
-            //DropDownHelper.SelectElementbyValue(By.Id("input-limit"), "");
-            DropDownHelper.SelectElementbyText(By.Id("input-sort"), "Rating (Highest)");
+            
+            try
+            {
+                NavigationHelper.NavigatetoUrl(ObjectRepository.Config.GetWebsite());
+                LinkHelper.ClickLink(By.LinkText("Desktops"));
+                LinkHelper.ClickLink(By.LinkText("Mac (1)"));
+                DropDownHelper.SelectElementbyIndex(By.Id("input-sort"), 3);
+                //DropDownHelper.SelectElementbyValue(By.Id("input-limit"), "");
+                DropDownHelper.SelectElementbyText(By.Id("input-sort"), "Rating (Highest)");
 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                GenericHelper.TakeScreenShot();
+                throw;
+            }
         }
     }
 }

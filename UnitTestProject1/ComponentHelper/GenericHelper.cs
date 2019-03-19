@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using UnitTestProject1.Settings;
 
 namespace UnitTestProject1.ComponentHelper
@@ -36,5 +38,12 @@ namespace UnitTestProject1.ComponentHelper
             }
         }
 
+        public static void TakeScreenShot(string errorShot = "Error")
+        {
+            var screenshot = ObjectRepository.Driver.TakeScreenshot();
+            Directory.CreateDirectory("screenshots");
+            errorShot = $"{DateTime.Now:dd.MM.yyyy-HH.mm.ss}.jpeg";
+            screenshot.SaveAsFile("screenshots\\" + ObjectRepository.Driver.Title + "--" + errorShot, ScreenshotImageFormat.Jpeg);
+        }
     }
 }
